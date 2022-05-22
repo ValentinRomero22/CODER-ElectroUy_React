@@ -1,13 +1,14 @@
 import logo from './logo.svg';
-import './App.css';
+import './sass/app.scss';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+        <h1 className='encabezado'>Proyecto Electro UY</h1>
+        <p style={{color: 'lightgray'}}>
+          Ecommerce de electrodomésticos
         </p>
         <a
           className="App-link"
