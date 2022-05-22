@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+import logo from './img/logo.png';
 import './sass/app.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className='encabezado'>Proyecto Electro UY</h1>
-        <p style={{color: 'lightgray'}}>
-          Ecommerce de electrodomésticos
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <header>
+      <div className="marca">
+        <img src={logo} alt="Logo"></img>
+        <p>Electro UY</p>
+      </div>
+      <div className="menu">
+        <ul className="listaMenu">
+          <li><a href="#"></a>Imagen y sonido</li>
+          <li><a href="#"></a>Cocina</li>
+          <li><a href="#"></a>Frío y calor</li>
+          <li><a href="#"></a>Hogar</li>
+          <li><a href="#"></a>Otros</li>
+        </ul>
+      </div>
+      <div className="searcher">
+        <p>Electro UY</p>
+      </div>
+      <div className="user">
+        <img src={logo} alt="Otro"></img>
+      </div>
+    </header>
   );
 }
 

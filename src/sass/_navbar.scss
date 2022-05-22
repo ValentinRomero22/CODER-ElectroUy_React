@@ -1,0 +1,38 @@
+header{
+    width: 100%;
+    max-height: 80px;
+    display: flex;
+    padding: 0.5% 5%;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0%;
+    font-family: $marca;
+
+    .marca{
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+
+        img{
+            max-width: 62px;
+            max-height: 45px;
+        }
+    }
+
+    .menu{
+        
+        li{
+            display: inline;
+            list-style: none;
+        }
+    }
+
+    .searcher{
+        font-family: $marca;
+    }
+
+    .user{
+        font-family: $marca;
+    }
+}
