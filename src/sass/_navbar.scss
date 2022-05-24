@@ -2,37 +2,66 @@ header{
     width: 100%;
     max-height: 80px;
     display: flex;
-    padding: 0.5% 5%;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    position: fixed;
-    top: 0%;
     font-family: $marca;
 
     .marca{
+        width: 20%;
         display: flex;
+        justify-content: space-evenly;
         align-items: center;
-        font-size: 24px;
+        padding-right: 5%;
 
+        div{
+            display: flex;
+            align-items: center;
+
+            h1{
+                font-size: 26px;
+                font-weight: normal;
+            }
+        }
+    
         img{
             max-width: 62px;
             max-height: 45px;
         }
     }
-
+    
     .menu{
-        
-        li{
-            display: inline;
-            list-style: none;
-        }
+        width: 50%;
+
+        ul{
+            display: flex;
+            :not(:first-child){
+                padding: 0% 2%;
+            }
+
+            li{
+                list-style: none;
+            }
+        }        
     }
 
-    .searcher{
-        font-family: $marca;
+    .box-searcher{
+        width: 25%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .searcher{        
+        width: 80%;
+        border: 0px;
+        border-bottom: 2px solid $principal;
+        font-family: $fuente;
+        font-size: 16px;
     }
 
     .user{
-        font-family: $marca;
+        width: 5%;
+        display: flex;
+        justify-content: center;
     }
 }
+
