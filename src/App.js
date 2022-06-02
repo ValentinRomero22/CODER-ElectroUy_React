@@ -1,11 +1,11 @@
-import Navbar from "./components/navbar/navbar";
-import ItemListContainer from "./components/itemListContainer/itemListContainer";
+import Navbar from "./components/navbar/Navbar";
+import ItemListContainer from "./components/itemListContainer/ItemListContainer";
 
 function App() {
   return (
     <div>
       <Navbar/>
-      <ItemListContainer texto='Electro UY'></ItemListContainer>
+      <ItemListContainer titulo='Listado de productos'></ItemListContainer>
     </div>
   );
 }
