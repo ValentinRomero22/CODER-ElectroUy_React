@@ -5,7 +5,7 @@ header{
     justify-content: space-evenly;
     align-items: center;
     font-family: $marca;
-
+    
     .marca{
         width: 20%;
         display: flex;
@@ -15,13 +15,13 @@ header{
         div{
             display: flex;
             align-items: center;
-
+            
             h1{
                 font-size: 26px;
                 font-weight: normal;
             }
         }
-    
+        
         img{
             max-width: 62px;
             max-height: 45px;
@@ -29,20 +29,22 @@ header{
     }
     
     nav{
+        z-index: 1;
         width: 50%;  
 
         .menu-horizontal{
             display: flex;
             justify-content: space-around;
             list-style: none;
-
+            
             li{
                 &:hover {
                     .menu-vertical{
                         display: block;
+                        text-align: start;
                     }
                 }
-
+                
                 a{
                     display: block;
                     padding: 0px 10px;
