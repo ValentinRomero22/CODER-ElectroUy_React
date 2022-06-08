@@ -1,6 +1,7 @@
 import logo from '../../img/logo.png'
 import usuario from '../../img/usuario.png'
 import '../../sass/app.scss';
+import { Link, NavLink } from 'react-router-dom';
 
 const navbar = () => {
     return (
@@ -10,7 +11,9 @@ const navbar = () => {
             <img src={logo} alt="Logo"></img>
           </div>
           <div>
-            <h1>Electro UY</h1>
+            <Link to='/'>
+              <h1>Electro UY</h1>
+            </Link>
           </div>
         </div>
         <nav>
@@ -18,8 +21,11 @@ const navbar = () => {
             <li>
               <a href="#">Imagen y sonido</a>
               <ul className="menu-vertical">
-                <li><a href="#">Televisores</a></li>
-                <li><a href="#">Audio</a></li>
+                {/* <NavLink className={({ isActive }) => isActive ? 'claseActivo' : 'claseNoActivo'} to='/categoria/televisores'>Televisores</NavLink> */}
+                <Link to='/categoria/televisores'>Televisores</Link>
+                <Link to='/categoria/audio'>Audio</Link>
+                {/* <li><a href="#">Televisores</a></li>
+                <li><a href="#">Audio</a></li> */}
               </ul>
             </li>
             <li>
