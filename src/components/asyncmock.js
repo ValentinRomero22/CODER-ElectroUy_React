@@ -13,7 +13,7 @@ const productos = [
         nombre: 'Aire acondicionado',
         precio: 11500,
         descripcion: 'Aire acondicionado 12.000 BTU',
-        categoria: 'aires acondicionados',
+        categoria: 'aires_acondicionados',
         imagen: aire_acondicionado
     },
     {

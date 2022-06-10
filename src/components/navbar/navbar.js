@@ -24,42 +24,40 @@ const navbar = () => {
                 {/* <NavLink className={({ isActive }) => isActive ? 'claseActivo' : 'claseNoActivo'} to='/categoria/televisores'>Televisores</NavLink> */}
                 <Link to='/categoria/televisores'>Televisores</Link>
                 <Link to='/categoria/audio'>Audio</Link>
-                {/* <li><a href="#">Televisores</a></li>
-                <li><a href="#">Audio</a></li> */}
               </ul>
             </li>
             <li>
               <a href="#">Frío y calor</a>
               <ul className="menu-vertical">
-                <li><a href="#">Aires acondicionados</a></li>
-                <li><a href="#">Verano</a></li>
-                <li><a href="#">Invierno</a></li>
+                <Link to='/categoria/aires_acondicionados'>Aires acondicionados</Link>
+                <Link to='/categoria/verano'>Verano</Link>
+                <Link to='/categoria/invierno'>Invierno</Link>
               </ul>
             </li>
             <li>
               <a href="#">Cocina</a>
               <ul className="menu-vertical">
-                <li><a href="#">Cocinas</a></li>
-                <li><a href="#">Microondas</a></li>
-                <li><a href="#">Refrigeradores</a></li>
-                <li><a href="#">Freezers</a></li>
-                <li><a href="#">Extractores</a></li>
+                <Link to='/categoria/cocinas'>Cocinas</Link>
+                <Link to='/categoria/microondas'>Microondas</Link>
+                <Link to='/categoria/refrigeradores'>Refrigeradores</Link>
+                <Link to='/categoria/freezers'>Freezers</Link>
+                <Link to='/categoria/extractores'>Extractores</Link>
               </ul>
             </li>
             <li>
               <a href="#">Baño y lavado</a>
               <ul className="menu-vertical">
-                <li><a href="#">Lavarropas</a></li>
-                <li><a href="#">Secarropas</a></li>
-                <li><a href="#">Calefones</a></li>
+                <Link to='/categoria/lavarropas'>Lavarropas</Link>
+                <Link to='/categoria/secarropas'>Secarropas</Link>
+                <Link to='/categoria/calefones'>Calefones</Link>
               </ul>
             </li>
             <li>
               <a href="#">Otros</a>
               <ul className="menu-vertical">
-                <li><a href="#">Limpieza</a></li>
-                <li><a href="#">Entretenimiento</a></li>
-                <li><a href="#">Más productos</a></li>
+                <Link to='/categoria/limpieza'>Limpieza</Link>
+                <Link to='/categoria/entretenimiento'>Entretenimiento</Link>
+                <Link to='/categoria/mas_productos'>Más productos</Link>
               </ul>
             </li>
           </ul>
