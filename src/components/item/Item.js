@@ -1,4 +1,4 @@
-import DetailButton from "../button/DetailButton"
+import DetailButton from "../buttons/DetailButton"
 import { Link } from "react-router-dom"
 
 const Item = ({id, imagen, nombre, precio}) =>{

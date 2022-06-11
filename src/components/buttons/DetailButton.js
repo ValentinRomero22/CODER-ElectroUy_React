@@ -1,4 +1,4 @@
-const DetailButton = (prop) =>{
+const DetailButton = () =>{
     return(
         <button className="botonDetalle">Ver detalle</button>
     )
