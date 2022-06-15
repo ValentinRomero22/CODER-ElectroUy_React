@@ -1,6 +1,6 @@
-import Item from "../item/Item"
 import { Link } from "react-router-dom"
 import BasketButton from "../buttons/BasketButton"
+import Counter from "../counter/Counter"
 
 const ItemDetail = ({ nombre, precio, descripcion, imagen}) =>{
     return(
@@ -14,9 +14,12 @@ const ItemDetail = ({ nombre, precio, descripcion, imagen}) =>{
                         <h2>{nombre}</h2>
                         <p>{descripcion}</p>
                         <p>$ {precio}</p>
+                        
+                            <Counter/>
+                        
                         <div className="contenedor-boton-agregar">
                             <Link to=''>
-                            <BasketButton/>
+                                <BasketButton/>
                             </Link>
                         </div>                        
                     </div>

@@ -1,0 +1,12 @@
+.contador{
+    display: flex;
+    align-items: center;
+
+    input{
+        width: 15%;
+        height: max-content;
+        margin-left: 10px;
+        font-family: $fuente;
+        font-size: 16px;
+    }
+}

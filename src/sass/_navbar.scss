@@ -19,6 +19,7 @@ header{
             h1{
                 font-size: 26px;
                 font-weight: normal;
+                color: $color-negro;
             }
         }
         
@@ -26,10 +27,14 @@ header{
             max-width: 62px;
             max-height: 45px;
         }
+
+        a{
+            text-decoration: none;
+        }
     }
     
     nav{
-        z-index: 1;
+        z-index: 100;
         width: 50%;  
 
         .menu-horizontal{
@@ -63,9 +68,10 @@ header{
             display: none;
             list-style: none;
             background-color: $color-blanco;
-
+            padding: 0px;
+                
             li{
-
+                
                 a{
                     display: block;
                     text-decoration: none;
