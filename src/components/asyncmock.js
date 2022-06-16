@@ -14,7 +14,8 @@ const productos = [
         precio: 11500,
         descripcion: 'Aire acondicionado 12.000 BTU',
         categoria: 'aires_acondicionados',
-        imagen: aire_acondicionado
+        imagen: aire_acondicionado,
+        stock: 3
     },
     {
         id: 2,
@@ -22,7 +23,8 @@ const productos = [
         precio: 3500,
         descripcion: 'Aspiradora eléctrica automática blanca',
         categoria: 'limpieza',
-        imagen: aspiradora
+        imagen: aspiradora, 
+        stock: 10
     },
     {
         id: 3,
@@ -30,7 +32,8 @@ const productos = [
         precio: 16000,
         descripcion: 'Cocina con hornallas y horno eléctrico',
         categoria: 'cocinas',
-        imagen: cocina
+        imagen: cocina, 
+        stock: 5
     },
     {
         id: 4,
@@ -38,7 +41,8 @@ const productos = [
         precio: 6500,
         descripcion: 'Microondas 20lt gris y negro',
         categoria: 'microondas',
-        imagen: microondas
+        imagen: microondas, 
+        stock: 7
     },
     {
         id: 5,
@@ -46,7 +50,8 @@ const productos = [
         precio: 5500,
         descripcion: 'Secarropas 8kg carga frontal',
         categoria: 'secarropas',
-        imagen: secarropas
+        imagen: secarropas, 
+        stock: 4
     },
     {
         id: 6,
@@ -54,7 +59,8 @@ const productos = [
         precio: 26500,
         descripcion: 'Smart TV 4k Ultra HD 55"',
         categoria: 'televisores',
-        imagen: tv
+        imagen: tv, 
+        stock: 6
     }
 ]
 
