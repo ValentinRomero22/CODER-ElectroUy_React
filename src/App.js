@@ -2,14 +2,9 @@ import Navbar from "./components/navbar/navbar";
 import ItemListContainer from "./components/itemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/itemDetailContainer/ItemDetailContainer";
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { useState, createContext } from "react";
 import CarritoProvider from "./context/CarritoContext";
 
-/* export const Context = createContext() */
-
 function App() {
-  /* const [carrito, setCarrito] = useState([]) */
-
   return (
     <div>
       <CarritoProvider>
