@@ -18,22 +18,17 @@ export const CarritoProvider = ({ children }) =>{
 
     const agregarItem = (producto) =>{
         if(!carrito.some(p => p.id === producto.id)){
-            setcarrito([...carrito, producto])
-        }        
+            setcarrito([...carrito, producto])  
+        }
+        else{
+            const prod = carrito.find(p => p.id === producto.id)
+            prod.cantidad += producto.cantidad
+            setcarrito([...carrito])
+        }
     }
 
-    /* const obtenerCantidadDeProductos = () =>{
-        let cantidadTotal = 0
-
-        carrito.forEach(p =>{
-            cantidadTotal += p.cantidad
-        })
-
-        return cantidadTotal
-    } */
-
     return(
-        <CarritoContext.Provider value={{carrito, agregarItem, cantidadTotal/* obtenerCantidadDeProductos */}}>
+        <CarritoContext.Provider value={{carrito, agregarItem, cantidadTotal}}>
             { children }
         </CarritoContext.Provider>
     )

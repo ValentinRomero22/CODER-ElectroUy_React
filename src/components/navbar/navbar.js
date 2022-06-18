@@ -21,7 +21,6 @@ const Navbar = () => {
             <li>
               <a href="#">Imagen y sonido</a>
               <ul className="menu-vertical">
-                {/* <NavLink className={({ isActive }) => isActive ? 'claseActivo' : 'claseNoActivo'} to='/categoria/televisores'>Televisores</NavLink> */}
                 <Link to='/categoria/televisores'>Televisores</Link>
                 <Link to='/categoria/audio'>Audio</Link>
               </ul>

@@ -1,6 +1,5 @@
 import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
-import BasketButton from "../buttons/BasketButton"
 import Counter from "../counter/Counter"
 import CarritoProvider from "../../context/CarritoContext"
 
@@ -12,7 +11,7 @@ const ItemDetail = ({ id, nombre, precio, descripcion, imagen, stock }) =>{
     const handleAgregar = (cantidadText) => { 
         let cantidad = parseInt(cantidadText)
         agregarItem({ id, nombre, precio, cantidad})
-        setCantidadAgregada(cantidad)
+        setCantidadAgregada(cantidad)        
     }
 
     return(
@@ -29,7 +28,7 @@ const ItemDetail = ({ id, nombre, precio, descripcion, imagen, stock }) =>{
                         {
                             cantidadAgregada === 0 
                             ? <Counter onAdd={handleAgregar} stock={stock}/>
-                            : <Link to='/cart'>Terminar compra</Link>                    
+                            : <Link to='/cart' className="boton-terminar">Terminar compra</Link>                    
                         }                     
                     </div>
                 </div>
