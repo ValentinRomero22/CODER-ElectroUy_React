@@ -80,24 +80,16 @@ header{
         }
     }
 
-    .box-searcher{
-        width: 25%;
-        display: flex;
-        justify-content: center;
-    }
-
-    .searcher{        
-        width: 60%;
+    .cart{        
         border: 0px;
-        border-bottom: 2px solid $color-principal;
         font-family: $fuente;
         font-size: 16px;
     }
 
-    .user{
+    /* .user{
         width: 5%;
         display: flex;
         justify-content: center;
-    }
+    } */
 }
 

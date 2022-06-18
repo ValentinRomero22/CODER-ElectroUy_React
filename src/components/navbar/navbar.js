@@ -1,9 +1,9 @@
 import logo from '../../img/logo.png'
-import usuario from '../../img/usuario.png'
 import '../../sass/app.scss';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import WidgetCart from '../widgetCart/WidgetCart';
 
-const navbar = () => {
+const Navbar = () => {
     return (
       <header>
         <div className="marca">
@@ -62,14 +62,11 @@ const navbar = () => {
             </li>
           </ul>
         </nav>
-        <div className="box-searcher">
-          <input type="text" placeholder="Buscar" className="searcher"/>
-        </div>
-        <div className="user">
-          <a href="#"><img src={usuario} alt="Usuario"></img></a>
+        <div className="cart">          
+          <WidgetCart />
         </div>
       </header>
     );
   }
   
-  export default navbar
+  export default Navbar

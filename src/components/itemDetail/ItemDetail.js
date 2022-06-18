@@ -2,17 +2,13 @@ import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import BasketButton from "../buttons/BasketButton"
 import Counter from "../counter/Counter"
-import CarritoContext from "../../context/CarritoContext"
+import CarritoProvider from "../../context/CarritoContext"
 
-const ItemDetail = ({ id, nombre, precio, descripcion, imagen, stock}) =>{
-    const [cantidadAgregada, setCantidadAgregada] = useState(0)
+const ItemDetail = ({ id, nombre, precio, descripcion, imagen, stock }) =>{
+    const {agregarItem} = useContext(CarritoProvider)
 
-    //const { agregarItem } = useContext(CarritoContext)
-    
-    const handleOnAdd = (cantidad) => {
-        /* console.log(`se agregaron ${cantidad} ${nombre}`)  */
-        //agregarItem({id, nombre, precio, descripcion, imagen, stock})
-        setCantidadAgregada(cantidad)
+    const handleAgregar = (cantidad) => {   
+        agregarItem({id, nombre, precio, cantidad})
     }
 
     return(
@@ -27,7 +23,7 @@ const ItemDetail = ({ id, nombre, precio, descripcion, imagen, stock}) =>{
                         <p>{descripcion}</p>
                         <p>$ {precio}</p>
                         
-                            <Counter onAdd={"onAdd"} stock={stock}/>
+                            <Counter onAdd={handleAgregar} stock={stock}/>
                         
                         {/* <div className="contenedor-boton-agregar">
                             <Link to=''>
