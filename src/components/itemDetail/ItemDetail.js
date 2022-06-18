@@ -7,8 +7,12 @@ import CarritoProvider from "../../context/CarritoContext"
 const ItemDetail = ({ id, nombre, precio, descripcion, imagen, stock }) =>{
     const {agregarItem} = useContext(CarritoProvider)
 
-    const handleAgregar = (cantidad) => {   
-        agregarItem({id, nombre, precio, cantidad})
+    const [cantidadAgregada, setCantidadAgregada] = useState(0)
+
+    const handleAgregar = (cantidadText) => { 
+        let cantidad = parseInt(cantidadText)
+        agregarItem({ id, nombre, precio, cantidad})
+        setCantidadAgregada(cantidad)
     }
 
     return(
@@ -21,15 +25,12 @@ const ItemDetail = ({ id, nombre, precio, descripcion, imagen, stock }) =>{
                     <div className="item-detalle-columna">
                         <h2>{nombre}</h2>
                         <p>{descripcion}</p>
-                        <p>$ {precio}</p>
-                        
-                            <Counter onAdd={handleAgregar} stock={stock}/>
-                        
-                        {/* <div className="contenedor-boton-agregar">
-                            <Link to=''>
-                                <BasketButton/>
-                            </Link>
-                        </div>  */}                       
+                        <p>$ {precio}</p>   
+                        {
+                            cantidadAgregada === 0 
+                            ? <Counter onAdd={handleAgregar} stock={stock}/>
+                            : <Link to='/cart'>Terminar compra</Link>                    
+                        }                     
                     </div>
                 </div>
             </div>

@@ -3,8 +3,8 @@ import CarritoContext from '../../context/CarritoContext';
 import usuario from '../../img/usuario.png'
 
 const WidgetCart = () =>{
-    const { obtenerCantidadDeProductos } = useContext(CarritoContext)
-    const cantidadTotal = obtenerCantidadDeProductos()
+    const { /* obtenerCantidadDeProductos */ cantidadTotal } = useContext(CarritoContext)
+    /* const cantidadTotal = obtenerCantidadDeProductos() */
 
     return(
         <div>
