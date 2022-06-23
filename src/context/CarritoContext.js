@@ -5,7 +5,6 @@ const CarritoContext = createContext()
 export const CarritoProvider = ({ children }) =>{
     const [carrito, setcarrito] = useState([])
     const [cantidadTotal, setCantidadTotal] = useState(0)
-    console.log(carrito)
 
     useEffect(() =>{
         let cantidadTotal = 0
@@ -27,8 +26,12 @@ export const CarritoProvider = ({ children }) =>{
         }
     }
 
+    const obtenerItemsCarrito = () =>{
+        return carrito
+    }
+
     return(
-        <CarritoContext.Provider value={{carrito, agregarItem, cantidadTotal}}>
+        <CarritoContext.Provider value={{carrito, agregarItem, cantidadTotal, obtenerItemsCarrito}}>
             { children }
         </CarritoContext.Provider>
     )
