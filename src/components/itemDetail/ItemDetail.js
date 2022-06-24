@@ -2,15 +2,19 @@ import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import Counter from "../counter/Counter"
 import CarritoProvider from "../../context/CarritoContext"
+import { useNotification } from "../../notification/Notification"
 
 const ItemDetail = ({ id, nombre, precio, descripcion, imagen, stock }) =>{
     const {agregarItem} = useContext(CarritoProvider)
 
     const [cantidadAgregada, setCantidadAgregada] = useState(0)
 
+    const setNotificacion = useNotification()
+
     const handleAgregar = (cantidadText) => { 
         let cantidad = parseInt(cantidadText)
         agregarItem({ id, nombre, precio, cantidad})
+        setNotificacion('Producto agregado correctamente', 'exito')
         setCantidadAgregada(cantidad)        
     }
 
