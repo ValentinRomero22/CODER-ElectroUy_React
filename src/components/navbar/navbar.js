@@ -1,4 +1,3 @@
-import logo from '../../img/logo.png'
 import '../../sass/app.scss';
 import { Link } from 'react-router-dom';
 import WidgetCart from '../widgetCart/WidgetCart';
@@ -12,7 +11,7 @@ const Navbar = () => {
     <header>
       <div className="marca">
         <div>
-          <img src={logo} alt="Logo"></img>
+          <img src='/img/logo.png' alt="Logo"></img>
         </div>
         <div>
           <Link to='/'>

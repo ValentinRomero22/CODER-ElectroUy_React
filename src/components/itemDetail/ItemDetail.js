@@ -23,7 +23,7 @@ const ItemDetail = ({ id, nombre, precio, descripcion, imagen, stock }) =>{
             <div className="contenedor-item-detalle">
                 <div className="item-detalle">
                     <div className="item-imagen">
-                        <img src={imagen} alt={nombre}></img>   
+                        <img src={`/img/${imagen}.png`} alt={nombre}></img>   
                     </div>
                     <div className="item-detalle-columna">
                         <h2>{nombre}</h2>

@@ -1,31 +1,36 @@
 import {useEffect, useState} from 'react'
-import { obtenerProductos, obtenerProductosPorCategoria } from "../asyncmock"
 import ItemList from '../itemList/ItemList'
 import { useParams } from 'react-router-dom'
+import { db } from '../../services/firebase'
+import { getDocs, collection, query, where } from 'firebase/firestore'
+import { useNotification } from "../../notification/Notification"
 
 const ItemListContainer = (props) => { 
     const [productos, setProductos] = useState([])
     const [cargador, setCargador] = useState([true])
 
     const {categoria} = useParams()
+
+    const setNotificacion = useNotification()
     
     useEffect(() =>{
         setCargador(true)
 
-        if(!categoria){
-            obtenerProductos().then(response =>{
-                setProductos(response)
-            }).finally(() =>{
-                setCargador(false)
+        const collectionFirebase = categoria ? (
+            query(collection(db, 'productos'), where('categoria', '==', categoria))
+        ) : (collection(db, 'productos'))
+
+        getDocs(collectionFirebase).then(response =>{
+            const productosFirebase = response.docs.map(doc =>{
+                return{ id: doc.id, ...doc.data() }
             })
-        }
-        else{
-            obtenerProductosPorCategoria(categoria).then(response =>{
-                setProductos(response)
-            }).finally(() =>{
-                setCargador(false)
-            })
-        }
+
+            setProductos(productosFirebase)
+        }).catch(error =>{
+            setNotificacion(error, 'error')
+        }).finally(() =>{
+            setCargador(false)
+        })
     }, [categoria])
 
     if(cargador){

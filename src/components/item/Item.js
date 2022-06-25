@@ -5,7 +5,7 @@ const Item = ({id, imagen, nombre, precio}) =>{
 
     return(
         <li>
-            <img src={imagen} alt={nombre}/>
+            <img src={`/img/${imagen}.png`} alt={nombre}/>
 
             <p className="prueba">{nombre}</p>
             <p>$ {precio}</p>

@@ -30,8 +30,24 @@ export const CarritoProvider = ({ children }) =>{
         return carrito
     }
 
+    const limpiarCarrito = () =>{
+        setcarrito([])
+    }
+
+    const eliminarItem = (id) =>{
+        const nuevoCarrito = carrito.filter(p => p.id !== id)
+        setcarrito(nuevoCarrito)
+    }
+
     return(
-        <CarritoContext.Provider value={{carrito, agregarItem, cantidadTotal, obtenerItemsCarrito}}>
+        <CarritoContext.Provider 
+            value={{
+                cantidadTotal, 
+                carrito, 
+                agregarItem, 
+                obtenerItemsCarrito, 
+                limpiarCarrito, 
+                eliminarItem,}}>
             { children }
         </CarritoContext.Provider>
     )
