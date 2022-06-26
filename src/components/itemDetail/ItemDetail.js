@@ -25,15 +25,29 @@ const ItemDetail = ({ id, nombre, precio, descripcion, imagen, stock }) =>{
                     <div className="item-imagen">
                         <img src={`/img/${imagen}.png`} alt={nombre}></img>   
                     </div>
+                    <hr className="separador"></hr>
                     <div className="item-detalle-columna">
-                        <h2>{nombre}</h2>
-                        <p>{descripcion}</p>
-                        <p>$ {precio}</p>   
+                        <div className="item-nombre">
+                            <h2>{nombre}</h2>
+                        </div>
+                        <div className="item-descripcion">
+                            <p>{descripcion}</p>
+                        </div>                       
+                        <div className="item-valores">
+                            <div className="item-precio">
+                                <p>Precio: $ {precio}</p>
+                            </div>
+                            <div className="item-total">
+                                <p>Total: $</p> 
+                            </div>                            
+                        </div>
+                        <div>
                         {
                             cantidadAgregada === 0 
-                            ? <Counter onAdd={handleAgregar} stock={stock}/>
+                            ? <Counter onAdd={handleAgregar} stock={stock} className="item-counter"/>
                             : <Link to='/cart' className="boton-terminar">Terminar compra</Link>                    
-                        }                     
+                        }
+                        </div>                                             
                     </div>
                 </div>
             </div>

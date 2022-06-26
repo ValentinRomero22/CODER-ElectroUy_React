@@ -40,9 +40,9 @@ const ItemListContainer = () => {
 
     let titulo = ''
     if(categoria)
-        titulo = 'LISTADO DE ' + categoria.replace(/_/g, ' ').toUpperCase()
+        titulo = categoria.replace(/_/g, ' ').toUpperCase()
     else
-        titulo = 'LISTADO DE PRODUCTOS'
+        titulo = 'PRODUCTOS'
 
     return(
         <>
