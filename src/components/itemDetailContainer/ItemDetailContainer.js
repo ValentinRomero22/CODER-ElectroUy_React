@@ -5,7 +5,7 @@ import { db } from "../../services/firebase"
 import { doc, getDoc } from "firebase/firestore"
 import { useNotification } from "../../notification/Notification"
 
-const ItemDetailContainer = () =>{
+const ItemDetailContainer = (props) =>{
     const [producto, setProducto] = useState()
     const {id} = useParams()
 
@@ -24,7 +24,7 @@ const ItemDetailContainer = () =>{
     
     return(
         <>
-            <h2>Detalle del producto</h2>
+            <h2>{props.titulo}</h2>
             <ItemDetail {... producto} />
         </>
     )

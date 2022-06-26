@@ -4,8 +4,9 @@ import { useParams } from 'react-router-dom'
 import { db } from '../../services/firebase'
 import { getDocs, collection, query, where } from 'firebase/firestore'
 import { useNotification } from "../../notification/Notification"
+import Louder from '../louder/Louder'
 
-const ItemListContainer = (props) => { 
+const ItemListContainer = () => { 
     const [productos, setProductos] = useState([])
     const [cargador, setCargador] = useState([true])
 
@@ -34,14 +35,23 @@ const ItemListContainer = (props) => {
     }, [categoria])
 
     if(cargador){
-        return <h3>Cargando...</h3>
+        return <Louder />
     }
 
+    let titulo = ''
+    if(categoria)
+        titulo = 'LISTADO DE ' + categoria.replace(/_/g, ' ').toUpperCase()
+    else
+        titulo = 'LISTADO DE PRODUCTOS'
+
     return(
-        <div className="catalogo">
-            <h2>{props.titulo}</h2>
-            {productos.length > 0 ? <ItemList productos={productos} /> : <h3>No hay productos</h3>}
-        </div>
+        <>
+            <h2>{titulo}</h2>
+            <div>
+                {/* {categoria ? <h2>LISTADO DE {categoria.replace(/_/g, ' ').toUpperCase()}</h2> : <h2>LISTADO DE PRODUCTOS</h2>} */}
+                {productos.length > 0 ? <ItemList productos={productos} /> : <h3>No hay productos</h3>}
+            </div>
+        </>
     ); 
 }
 

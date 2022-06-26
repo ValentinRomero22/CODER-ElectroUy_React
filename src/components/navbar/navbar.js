@@ -22,44 +22,45 @@ const Navbar = () => {
       <nav>
         <ul className="menu-horizontal">
           <li>
-            <a href="#">Imagen y sonido</a>
+            <a href="#">IMAGEN Y SONIDO</a>
             <ul className="menu-vertical">
-              <Link to='/categoria/televisores'>Televisores</Link>
-              <Link to='/categoria/audio'>Audio</Link>
+              <Link to='/categoria/televisores'>TELEVISORES</Link>
+              <Link to='/categoria/audio'>AUDIO</Link>
             </ul>
           </li>
           <li>
-            <a href="#">Frío y calor</a>
+            <a href="#">FRÍO Y CALOR</a>
             <ul className="menu-vertical">
-              <Link to='/categoria/aires_acondicionados'>Aires acondicionados</Link>
-              <Link to='/categoria/verano'>Verano</Link>
-              <Link to='/categoria/invierno'>Invierno</Link>
+              <Link to='/categoria/aires_acondicionados'>AIRES ACONDICIONADOS</Link>
+              <Link to='/categoria/verano'>VERANO</Link>
+              <Link to='/categoria/invierno'>INVIERNO</Link>
             </ul>
           </li>
           <li>
-            <a href="#">Cocina</a>
+            <a href="#">COCINA</a>
             <ul className="menu-vertical">
-              <Link to='/categoria/cocinas'>Cocinas</Link>
-              <Link to='/categoria/microondas'>Microondas</Link>
-              <Link to='/categoria/refrigeradores'>Refrigeradores</Link>
-              <Link to='/categoria/freezers'>Freezers</Link>
-              <Link to='/categoria/extractores'>Extractores</Link>
+              <Link to='/categoria/cocinas'>COCINAS</Link>
+              <Link to='/categoria/microondas'>MICROONDAS</Link>
+              <Link to='/categoria/refrigeradores'>REFRIGERADORES</Link>
+              <Link to='/categoria/freezers'>FREEZERS</Link>
+              <Link to='/categoria/extractores'>EXTRACTORES</Link>
             </ul>
           </li>
           <li>
-            <a href="#">Baño y lavado</a>
+            <a href="#">BAÑO Y LAVADO
+            </a>
             <ul className="menu-vertical">
-              <Link to='/categoria/lavarropas'>Lavarropas</Link>
-              <Link to='/categoria/secarropas'>Secarropas</Link>
-              <Link to='/categoria/calefones'>Calefones</Link>
+              <Link to='/categoria/lavarropas'>LAVARROPAS</Link>
+              <Link to='/categoria/secarropas'>SECARROPAS</Link>
+              <Link to='/categoria/calefones'>CALEFONES</Link>
             </ul>
           </li>
           <li>
-            <a href="#">Otros</a>
+            <a href="#">OTROS</a>
             <ul className="menu-vertical">
-              <Link to='/categoria/limpieza'>Limpieza</Link>
-              <Link to='/categoria/entretenimiento'>Entretenimiento</Link>
-              <Link to='/categoria/mas_productos'>Más productos</Link>
+              <Link to='/categoria/limpieza'>LIMPIEZA</Link>
+              <Link to='/categoria/entretenimiento'>ENTRETENIMIENTO</Link>
+              <Link to='/categoria/mas_productos'>MÁS PRODUCTOS</Link>
             </ul>
           </li>
         </ul>
