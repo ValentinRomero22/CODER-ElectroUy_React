@@ -1,25 +1,5 @@
 .boton{
-    width: 90%;
-    margin: 0px 0px;
-    padding: 3% 0%;
-    font-family: $fuente;
-    background-color: $color-blanco;
-    color: $color-negro;
-    border: 1px solid $color-borde-oscuro;
-    border-radius: 5px;
-    font-size: 14px;
-
-    &:hover{
-        background-color: $color-principal;
-        color: $color-blanco;
-        border: 1px solid $color-principal;
-    }
-}
-
-.boton-terminar{
-    width: 90%;
-    margin: 0px 0px;
-    padding: 3% 0%;
+    padding: 10px 25px;
     font-family: $fuente;
     background-color: $color-blanco;
     color: $color-negro;
@@ -30,8 +10,30 @@
     text-decoration: none;
 
     &:hover{
+        background-color: $color-principal;
+        color: $color-blanco;
+        border: 1px solid $color-principal;
+    }
+}
+
+.boton-terminar{
+    padding: 10px 25px;
+    font-family: $fuente;
+    background-color: $color-blanco;
+    color: $color-negro;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover{
         background-color: $color-negro;
         color: $color-blanco;
         border: 1px solid $color-negro;
     }
+}
+
+.boton-contenedor{
+    width: 100%;
 }

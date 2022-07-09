@@ -14,7 +14,7 @@ const Counter = ({onAdd, stock, inicial = 1}) =>{
                 <p>Cantidad</p>          
                 <input type='number' value={cantidad} onChange={handleChange}></input>  
             </div>                      
-            <div className="contador">
+            <div>
                 <button className="boton" onClick={() => onAdd(cantidad)}>Agregar al carrito</button>
             </div>
        </div>

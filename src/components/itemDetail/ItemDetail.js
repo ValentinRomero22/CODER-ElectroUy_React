@@ -41,11 +41,15 @@ const ItemDetail = ({ id, nombre, precio, descripcion, imagen, stock }) =>{
                                 <p>Total: $</p> 
                             </div>                            
                         </div>
-                        <div>
+                        <div className="contenedor-contador">
                         {
                             cantidadAgregada === 0 
-                            ? <Counter onAdd={handleAgregar} stock={stock} className="item-counter"/>
-                            : <Link to='/cart' className="boton-terminar">Terminar compra</Link>                    
+                            ? <div>
+                                <Counter onAdd={handleAgregar} stock={stock}/>
+                            </div>
+                            : <div>
+                                <Link to='/cart' className="boton-terminar">Terminar compra</Link> 
+                            </div>                   
                         }
                         </div>                                             
                     </div>

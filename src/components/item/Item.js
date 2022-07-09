@@ -1,4 +1,3 @@
-import DetailButton from "../buttons/DetailButton"
 import { Link } from "react-router-dom"
 
 const Item = ({id, imagen, nombre, precio}) =>{
@@ -13,9 +12,11 @@ const Item = ({id, imagen, nombre, precio}) =>{
             </div>
             <div className="item-footer">
                 <p>$ {precio}</p>
-                <Link className="contenedor-detalle" to={`/detalle/${id}`}>
-                    <DetailButton/>
-                </Link>
+                <div className="contenedor-detalle">
+                    <Link className="boton boton-contenedor" to={`/detalle/${id}`}>
+                        Ver detalle
+                    </Link>
+                </div>                
             </div>          
         </div>
     )
