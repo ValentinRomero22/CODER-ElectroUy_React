@@ -1,31 +1,33 @@
-import { useEffect, useState } from "react"
+
 import ItemDetail from "../itemDetail/ItemDetail"
 import { useParams } from "react-router-dom"
 import { db } from "../../services/firebase"
 import { doc, getDoc } from "firebase/firestore"
 import { useNotification } from "../../notification/Notification"
+import Louder from '../louder/Louder'
+import { useAsync } from "../../hooks/useAsync"
 
 const ItemDetailContainer = (props) =>{
-    const [producto, setProducto] = useState()
     const {id} = useParams()
-
     const setNotificacion = useNotification()
 
-    useEffect(() =>{
-        const docFirebase = doc(db, 'productos', id) 
-
-        getDoc(docFirebase).then(doc =>{
-            const productoFirebase = { id: doc.id, ...doc.data() }
-            setProducto(productoFirebase)
-        }).catch(error =>{
-            setNotificacion(error, 'error')
-        })
-    }, [id])
+    const docFirebase = doc(db, 'productos', id) 
+    const {cargando, data, error} = useAsync(() => getDoc(docFirebase), [id])
     
+    if(cargando){
+        return <Louder />
+    }
+    
+    if(error){
+        setNotificacion('Se produjo un error inesperado' , 'error')
+    }
+    
+    const producto = { id: data.id, ...data.data() }
+
     return(
         <>
             <h2>{props.titulo}</h2>
-            <ItemDetail {... producto} />
+            <ItemDetail {...producto} />
         </>
     )
 }

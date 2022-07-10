@@ -1,10 +1,25 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, useRef } from "react";
 
 const CarritoContext = createContext()
 
 export const CarritoProvider = ({ children }) =>{
     const [carrito, setcarrito] = useState([])
     const [cantidadTotal, setCantidadTotal] = useState(0)
+
+    const render = useRef(0)
+
+    useEffect(() => {
+        const carritoStorage = localStorage.getItem('carrito')
+        const carritoJson = JSON.parse(carritoStorage)
+        setcarrito(carritoJson)
+    }, [])
+
+    useEffect(() =>{
+        if(render.current > 0){
+            localStorage.setItem('carrito', JSON.stringify(carrito))        
+        }        
+        render.current += 1
+    }, [carrito])
 
     useEffect(() =>{
         let cantidadTotal = 0

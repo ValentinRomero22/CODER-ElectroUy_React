@@ -2,7 +2,7 @@ import { useContext } from "react"
 import CartItem from "../cartItem/CartItem"
 import CarritoProvider from "../../context/CarritoContext"
 import { useNotification } from "../../notification/Notification"
-import { addDoc, collection, getDoc, writeBatch, getDocs, documentId, query, where, doc, serverTimestamp} from 'firebase/firestore'
+import { addDoc, collection, writeBatch, getDocs, documentId, query, where} from 'firebase/firestore'
 import { db } from '../../services/firebase/index'
 import { useState } from 'react'
 import Louder from '../louder/Louder'
@@ -94,17 +94,15 @@ const Cart = ({ items }) =>{
             <div className="carrito">
                 {items.map(i => <CartItem key = {i.id} {...i} eliminar={handleEliminar}/>)}
                 <div className="contenedor-pie-carrito">
-                    {/* <div className="pie-carrito"> */}
-                        <div className="pie-carrito-seccion">                            
-                            <p>TOTAL: $ {total}</p>
-                        </div>
-                        <div className="pie-carrito-seccion">                            
-                            <button className="boton-terminar" onClick={handleVaciar}>Vaciar carrito</button>
-                        </div>
-                        <div className="pie-carrito-seccion">
-                            <button className="boton" onClick={handleCrearOrden}>Generar orden</button>
-                        </div>
-                    {/* div */}
+                    <div className="pie-carrito-seccion">                            
+                        <p>TOTAL: $ {total}</p>
+                    </div>
+                    <div className="pie-carrito-seccion">                            
+                        <button className="boton-terminar" onClick={handleVaciar}>Vaciar carrito</button>
+                    </div>
+                    <div className="pie-carrito-seccion">
+                        <button className="boton" onClick={handleCrearOrden}>Confirmar pedido</button>
+                    </div>
                 </div>
             </div>
         </>
