@@ -13,3 +13,12 @@ export const adaptadorProductosFirebase = (doc) => {
 
     return productos
 }
+
+export const adaptadorCategoriasFirebase = (doc) =>{
+    const data = doc.data()
+
+    const categorias = {
+        nombre: data.nombre
+    }
+    return categorias
+}

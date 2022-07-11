@@ -38,10 +38,6 @@
             border: 1px solid $color-borde-claro;
             border-radius: 10px;
             box-shadow: 0px 10px 30px -15px;
-
-            /* &:not(:last-child){
-                margin-bottom: 2%;
-            } */
         
             .carrito-item-seccion{
                 width: 20%;
@@ -49,17 +45,5 @@
         }
     }
 }
-
-/* .pie-carrito{
-    padding: .5% 5%;
-    height: auto;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid $color-borde-claro;
-    border-radius: 10px;
-    box-shadow: 0px 10px 30px -15px;
-} */
 
 

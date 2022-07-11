@@ -54,6 +54,15 @@ export const CarritoProvider = ({ children }) =>{
         setcarrito(nuevoCarrito)
     }
 
+    const obtenerTotal = () =>{
+        let total = 0
+        carrito.forEach(item => {
+            total += item.precio * item.cantidad
+        });
+
+        return total
+    }
+
     return(
         <CarritoContext.Provider 
             value={{
@@ -62,7 +71,8 @@ export const CarritoProvider = ({ children }) =>{
                 agregarItem, 
                 obtenerItemsCarrito, 
                 limpiarCarrito, 
-                eliminarItem,}}>
+                eliminarItem,
+                obtenerTotal}}>
             { children }
         </CarritoContext.Provider>
     )

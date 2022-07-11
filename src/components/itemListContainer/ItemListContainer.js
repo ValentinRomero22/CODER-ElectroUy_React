@@ -1,13 +1,13 @@
 import ItemList from '../itemList/ItemList'
 import { useParams } from 'react-router-dom'
-import { useNotification } from "../../notification/Notification"
 import Louder from '../louder/Louder'
 import { obtenerProductos } from '../../services/firebase/firestore'
 import { useAsync } from '../../hooks/useAsync'
+import useNotification from "../../hooks/useNotificacion"
 
 const ItemListContainer = () => { 
     const {categoria} = useParams()
-    const setNotificacion = useNotification()
+    const agregarNotificacion = useNotification()
     
     const {cargando, data, error} = useAsync(() => obtenerProductos(categoria), [categoria])
 
@@ -16,7 +16,7 @@ const ItemListContainer = () => {
     }
 
     if(error){
-        setNotificacion('Se produjo un error inesperado' , 'error')
+        agregarNotificacion('Se produjo un error inesperado' , 'error')
     }
 
     let titulo = ''

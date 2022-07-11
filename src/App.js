@@ -4,22 +4,23 @@ import ItemDetailContainer from "./components/itemDetailContainer/ItemDetailCont
 import CartContainer from "./components/cartContainer/CartContainer"
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { CarritoProvider } from "./context/CarritoContext"
-import { NotificacionProvider } from "./notification/Notification"
+import Checkout from "./components/checkout/Checkout"
+import { NotificacionProvider } from "./context/NotificacionContext"
 
 function App() {
   return (
     <div>
       <NotificacionProvider>
         <CarritoProvider>
-          <BrowserRouter>          
+          <BrowserRouter> 
             <Navbar/>
             <Routes>
               <Route path='/' element={ <ItemListContainer /> }/>
               <Route path='/categoria/:categoria' element={ <ItemListContainer /> }/>
               <Route path='/detalle/:id' element={ <ItemDetailContainer titulo='DETALLE DEL PRODUCTO'/> }/>
-              <Route path='/cart' element={ <CartContainer titulo='CARRITO DE COMPRAS' /> }/>
-              {/* <Route path='checkout' element={ <Checkout />}/> */}
-            </Routes>
+              <Route path='/cart/' element={ <CartContainer titulo='CARRITO DE COMPRAS' /> }/>
+              <Route path='/checkout/' element={ <Checkout titulo='CHECKOUT'/> }/> 
+            </Routes>    
           </BrowserRouter>
         </CarritoProvider>
       </NotificacionProvider>

@@ -9,9 +9,11 @@ const CartContainer = (props) =>{
     return(
         <>
             <h2>{props.titulo}</h2>
-            {(itemsCarrito.length != 0) ?
-            <div className="contendor-carrito"><Cart items={itemsCarrito}/></div> :
-            <h3>Su carrito de compras está vacío</h3>}
+            {
+                (itemsCarrito.length !== 0) ?
+                <div className="contendor-carrito"><Cart items={itemsCarrito}/></div> :
+                <h3>Su carrito de compras está vacío</h3>
+            }
         </>
     )  
 }

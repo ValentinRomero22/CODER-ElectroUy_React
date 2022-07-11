@@ -1,12 +1,19 @@
-import '../../sass/app.scss';
-import { Link, NavLink } from 'react-router-dom';
-import WidgetCart from '../widgetCart/WidgetCart';
-import { useContext } from 'react';
-import CarritoContext from '../../context/CarritoContext';
+import '../../sass/app.scss'
+import { Link } from 'react-router-dom'
+import WidgetCart from '../widgetCart/WidgetCart'
+import { useContext } from 'react'
+import CarritoContext from '../../context/CarritoContext'
+import { obtenerCategorias } from '../../services/firebase/firestore'
+import { useAsync } from '../../hooks/useAsync'
+import Menu from '../menu/Menu'
 
 const Navbar = () => {
   const { carrito } = useContext(CarritoContext)
 
+  const {data} = useAsync(() => obtenerCategorias(), [])
+  /* const categorias = obtenerCategorias() */
+
+  console.log(data)
   return (
     <header>
       <div className="marca">
@@ -21,25 +28,14 @@ const Navbar = () => {
       </div>
       <nav>
         <ul className="menu-horizontal">
-          <li>
-            <Link to='/categoria/imagen_y_sonido'>IMAGEN Y SONIDO</Link>
-          </li>
-          <li>
-            <Link to='/categoria/linea_blanca'>LINEA BLANCA</Link>
-          </li>
-          <li>
-            <Link to='/categoria/tecnologia'>TECNOLOGIA</Link>
-          </li>
-          <li>
-            <Link to='/categoria/otros'>OTROS</Link>
-          </li>
+          {console.log(data)}
         </ul>
       </nav>
       <div className="cart">
-        { carrito.length > 0 && <WidgetCart />}
+        { carrito.length > 0 && <WidgetCart /> }
       </div>
     </header>
   );
 }
-  
+
 export default Navbar

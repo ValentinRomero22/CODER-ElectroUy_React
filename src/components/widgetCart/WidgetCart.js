@@ -7,7 +7,7 @@ const WidgetCart = () =>{
 
     return(
         <div className='widget-carrito'>
-            <Link to='/cart'><img src='/img/carrito.png' alt="Usuario"></img></Link>
+            <Link to='/cart/'><img src='/img/carrito.png' alt="Usuario"></img></Link>
             {cantidadTotal}
         </div>
     )

@@ -48,26 +48,24 @@ header{
             justify-content: space-around;
             list-style: none;
             padding: 0px 50px;
-            
-            li{
-                
-                a{
-                    display: block;
-                    padding: 5px 0px;
-                    text-decoration: none;
-                    color: $color-negro;
-                    border-bottom: 3px solid transparent;
 
-                    &:hover{
-                        color: $color-principal;
-                        border-color: $color-principal;
-                    }
+            .activo{
+                display: block;
+                padding: 5px 20px;
+                text-decoration: none;
+                color: $color-blanco;
+                background-color: $color-principal;
+                border-radius: 5px;
+            }
 
-                    /* &:hover{
-                        color: $color-blanco;
-                        background-color: $color-principal;
-                        border-radius: 5px;
-                    } */
+            .normal{
+                display: block;
+                padding: 5px 20px;
+                text-decoration: none;
+                color: $color-negro;
+
+                &:hover{
+                    color: $color-principal;
                 }
             }
         }
