@@ -10,10 +10,8 @@ import Menu from '../menu/Menu'
 const Navbar = () => {
   const { carrito } = useContext(CarritoContext)
 
-  const {data} = useAsync(() => obtenerCategorias(), [])
-  /* const categorias = obtenerCategorias() */
+  const {cargando, data} = useAsync(() => obtenerCategorias(), [])
 
-  console.log(data)
   return (
     <header>
       <div className="marca">
@@ -28,7 +26,7 @@ const Navbar = () => {
       </div>
       <nav>
         <ul className="menu-horizontal">
-          {console.log(data)}
+          { !cargando && <Menu categorias={data} />}
         </ul>
       </nav>
       <div className="cart">

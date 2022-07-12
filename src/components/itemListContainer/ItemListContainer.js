@@ -7,6 +7,7 @@ import useNotification from "../../hooks/useNotificacion"
 
 const ItemListContainer = () => { 
     const {categoria} = useParams()
+    
     const agregarNotificacion = useNotification()
     
     const {cargando, data, error} = useAsync(() => obtenerProductos(categoria), [categoria])

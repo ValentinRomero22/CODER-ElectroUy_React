@@ -1,13 +1,16 @@
 import { NavLink } from 'react-router-dom'
 
 const Menu = ({categorias}) =>{
-    /* console.log(categorias) */
+
     return(
-        <>
-            {categorias.map(c =>
-                <li>
-                    <NavLink key={c} to='/categoria/tecnologia' className={({isActive}) => isActive ? 
-                    'activo' : 'normal'}>{c.nombre.toUpperCase}</NavLink>
+        <>  
+            {categorias.map( c =>
+                <li key={c.nombre}>
+                    <NavLink
+                        to={`/categoria/${c.nombre}`}
+                        className={({isActive}) => isActive ? 
+                        'activo' : 'normal'}>{c.nombre.replace(/_/g, ' ').toUpperCase()}
+                    </NavLink>
                 </li>
             )}
         </>

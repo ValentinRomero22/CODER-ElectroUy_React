@@ -20,5 +20,6 @@ export const adaptadorCategoriasFirebase = (doc) =>{
     const categorias = {
         nombre: data.nombre
     }
+    
     return categorias
 }

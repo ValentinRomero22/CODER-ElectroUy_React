@@ -21,26 +21,39 @@ export const NotificacionProvider = ({ children }) => {
         right: 50,
         width: 'auto',
         height: 'auto'
+    } 
+
+    let backgroundColor
+
+    switch(tipo){
+        case 'error':
+            backgroundColor = 'red'
+            break
+        case 'advertencia':
+            backgroundColor = 'blue'
+            break
+        default:
+            backgroundColor = 'green'
     }
 
-    const contenedorNotificacion = {
+    const notificacion = {
         position: 'relative',
         marginTop: '10px',
         width: 'auto',
         height: 'auto',
-        backgroundColor: tipo === 'error' ? 'red' : 'green',
         color: 'white',
+        backgroundColor: backgroundColor,
         padding: '10px 20px',
         borderRadius: '5px',
         fontSize: '14px',
-    } 
+    }
 
     return(
         <NotificacionContext.Provider value={ agregarNotificacion }>
             { children }
             <div style={contenedorNotificaciones}>
                 {mensajes.map(n => (
-                    <div style={contenedorNotificacion} key={n}>
+                    <div style={notificacion} key={n}>
                         {n}
                     </div>
                 ))}
