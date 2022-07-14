@@ -30,8 +30,13 @@ export const CarritoProvider = ({ children }) =>{
         setCantidadTotal(cantidadTotal)
     }, [carrito])
 
+    const agregado = (producto) =>{
+        if(!carrito.some(p => p.id === producto.id))
+            return true
+    }
+
     const agregarItem = (producto) =>{
-        if(!carrito.some(p => p.id === producto.id)){
+        if(agregado(producto)){
             setcarrito([...carrito, producto])  
         }
         else{
@@ -72,7 +77,8 @@ export const CarritoProvider = ({ children }) =>{
                 obtenerItemsCarrito, 
                 limpiarCarrito, 
                 eliminarItem,
-                obtenerTotal}}>
+                obtenerTotal,
+                agregado}}>
             { children }
         </CarritoContext.Provider>
     )

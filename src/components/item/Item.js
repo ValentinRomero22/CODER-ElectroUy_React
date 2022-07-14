@@ -5,7 +5,7 @@ const Item = ({id, imagen, nombre, precio}) =>{
     return(
         <div className="item">
             <div className="item-imagen">
-                <img src={`/img/${imagen}.png`} alt={nombre}/>
+                <img src={imagen} alt={nombre}/>
             </div>
             <div className="item-nombre">
                 <p>{nombre}</p>

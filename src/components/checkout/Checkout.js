@@ -6,10 +6,13 @@ import { useState } from 'react'
 import Louder from '../louder/Louder'
 import ClientForm from "../clientForm/ClientForm"
 import useNotification from "../../hooks/useNotificacion"
+import { Link } from "react-router-dom"
 
 const Checkout = (props) =>{
     const {carrito, obtenerTotal, limpiarCarrito} = useContext(CarritoProvider)
     const [cargador, setCargador] = useState(false)
+    const [compra, setCompra] = useState(false)
+    const [id, setId] = useState("")
     
     const agregarNotificacion = useNotification()
 
@@ -62,7 +65,9 @@ const Checkout = (props) =>{
         }).then(({ id }) => {
             batch.commit()
             limpiarCarrito()
-            handleAgregar(`Su compra ha sido confirmada. Orden ID: ${id}`, 'exito')
+            handleAgregar('Compra confirmada!', 'exito')
+            setId(id)
+            setCompra(true)
             
         }).catch(error =>{
             if(error.type === 'sinstock'){
@@ -82,14 +87,33 @@ const Checkout = (props) =>{
         return <Louder />
     }
 
-    return(
-        <>
-            <div className="contenedor-checkout">
-                <h2>{props.titulo}</h2>
-                <ClientForm crearOrden={handleCrearOrden}/>
-            </div>
-        </>
-    )
+    /* if(compra){
+        handleAgregar('notificacion de compra', 'advertencia')
+    } */
+
+    if(compra){
+        return(
+            <>
+                <div className="contenedor-checkout">
+                    <h2>{props.titulo}</h2>
+                    <h3>Su compra fue registrada con éxito. El ID de su orden es {id}</h3>
+                    <div className="contenedor-boton-seguir">
+                        <Link to='/' className="boton">Seguir comprando</Link>
+                    </div>
+                </div>
+            </>
+        )
+    }
+    else{
+        return(
+            <>
+                <div className="contenedor-checkout">
+                    <h2>{props.titulo}</h2>
+                    <ClientForm crearOrden={handleCrearOrden}/>
+                </div>
+            </>
+        )
+    }
 }
 
 export default Checkout

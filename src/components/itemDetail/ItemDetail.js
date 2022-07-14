@@ -1,18 +1,20 @@
-import { useContext, useState } from "react"
+import { useContext, useState} from "react"
 import { Link } from "react-router-dom"
 import Counter from "../counter/Counter"
 import CarritoProvider from "../../context/CarritoContext"
 import useNotification from "../../hooks/useNotificacion"
 
-const ItemDetail = ({ id, nombre, precio, descripcion, imagen, stock }) =>{
-    const {agregarItem} = useContext(CarritoProvider)
+const ItemDetail = (producto) =>{
+    const { agregarItem } = useContext(CarritoProvider)
     const [cantidadAgregada, setCantidadAgregada] = useState(0)
 
     const agregarNotificacion = useNotification()
-
+    
+    const { id, nombre, precio, descripcion, imagen, stock } = producto
+    
     const handleAgregar = (cantidadText) => { 
         let cantidad = parseInt(cantidadText)
-        agregarItem({ id, nombre, precio, cantidad})
+        agregarItem({ id, nombre, precio, cantidad })
         agregarNotificacion('Producto agregado correctamente', 'exito')
         setCantidadAgregada(cantidad)        
     }
@@ -22,7 +24,7 @@ const ItemDetail = ({ id, nombre, precio, descripcion, imagen, stock }) =>{
             <div className="contenedor-item-detalle">
                 <div className="item-detalle">
                     <div className="item-imagen">
-                        <img src={`/img/${imagen}.png`} alt={nombre}></img>   
+                        <img src={imagen} alt={nombre}></img>   
                     </div>
                     <hr className="separador"></hr>
                     <div className="item-detalle-columna">
@@ -32,13 +34,8 @@ const ItemDetail = ({ id, nombre, precio, descripcion, imagen, stock }) =>{
                         <div className="item-descripcion">
                             <p>{descripcion}</p>
                         </div>                       
-                        <div className="item-valores">
-                            <div className="item-precio">
-                                <p>Precio: $ {precio}</p>
-                            </div>
-                            <div className="item-total">
-                                <p>Total: $</p> 
-                            </div>                            
+                        <div className="item-precio">
+                            <p>Precio: $ {precio}</p> 
                         </div>
                         <div className="contenedor-contador">
                         {

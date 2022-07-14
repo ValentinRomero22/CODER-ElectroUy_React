@@ -6,10 +6,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { CarritoProvider } from "./context/CarritoContext"
 import Checkout from "./components/checkout/Checkout"
 import { NotificacionProvider } from "./context/NotificacionContext"
+import Footer from "./components/footer/Footer"
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <NotificacionProvider>
         <CarritoProvider>
           <BrowserRouter> 
@@ -24,6 +25,7 @@ function App() {
           </BrowserRouter>
         </CarritoProvider>
       </NotificacionProvider>
+      <Footer />
     </div>
   );
 }

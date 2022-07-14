@@ -1,5 +1,5 @@
 .contenedor-checkout{
-    margin: 0% 10%;
+    margin: 0% 10% 80px 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,5 +25,9 @@
         input[type=submit]{
             font-size: 1.2em;
         }
+    }
+
+    .contenedor-boton-seguir{
+        width: 20%;
     }
 }

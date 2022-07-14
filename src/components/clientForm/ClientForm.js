@@ -90,7 +90,7 @@ const validar = (nombre, telefono, email, direccion) => {
     if(!email.includes('@') || email.length < 10)
         return "El email ingresado no es válido"
 
-    if(direccion.length < 10){
+    if(direccion.length < 5){
         return "La dirección debe tener mínimo 10 caracteres"
     }
 }

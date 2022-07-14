@@ -10,13 +10,13 @@ import Menu from '../menu/Menu'
 const Navbar = () => {
   const { carrito } = useContext(CarritoContext)
 
-  const {cargando, data} = useAsync(() => obtenerCategorias(), [])
+  const { cargando, data } = useAsync(() => obtenerCategorias(), [])
 
   return (
     <header>
       <div className="marca">
         <div>
-          <img src='/img/logo.png' alt="Logo"></img>
+          <img src='https://drive.google.com/uc?export=view&id=1Mix8tF52xU1IKXlVHibR_3N-MomTrTRt' alt="Logo"></img>
         </div>
         <div>
           <Link to='/'>
@@ -26,7 +26,7 @@ const Navbar = () => {
       </div>
       <nav>
         <ul className="menu-horizontal">
-          { !cargando && <Menu categorias={data} />}
+          { !cargando && <Menu categorias={data} /> }
         </ul>
       </nav>
       <div className="cart">
