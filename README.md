@@ -107,4 +107,5 @@ Para el caso en el que otras órdenes se hayan generado en el transcurso en el q
 ## Usabilidad: archivo .gif
 
 Archivo de usabilidad de la aplicación que muestra brevemente el proceso de una compra exitosa:
+
 ![](src/usabilidad/usabilidad.gif)
