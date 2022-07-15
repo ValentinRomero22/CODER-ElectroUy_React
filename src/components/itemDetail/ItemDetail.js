@@ -4,18 +4,21 @@ import Counter from "../counter/Counter"
 import CarritoProvider from "../../context/CarritoContext"
 import useNotification from "../../hooks/useNotificacion"
 
-const ItemDetail = (producto) =>{
+const ItemDetail = ({ id, nombre, precio, descripcion, imagen, stock }) =>{
     const { agregarItem } = useContext(CarritoProvider)
     const [cantidadAgregada, setCantidadAgregada] = useState(0)
 
     const agregarNotificacion = useNotification()
     
-    const { id, nombre, precio, descripcion, imagen, stock } = producto
-    
     const handleAgregar = (cantidadText) => { 
         let cantidad = parseInt(cantidadText)
-        agregarItem({ id, nombre, precio, cantidad })
-        agregarNotificacion('Producto agregado correctamente', 'exito')
+        const actualizar = agregarItem({ id, nombre, precio, cantidad })
+        if(actualizar){
+            agregarNotificacion('Este producto ya se encontraba en el carrito, se actualizó su cantidad', 'advertencia')
+        }
+        else{
+            agregarNotificacion('Producto agregado correctamente', 'exito')
+        }
         setCantidadAgregada(cantidad)        
     }
 

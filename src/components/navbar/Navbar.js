@@ -30,7 +30,7 @@ const Navbar = () => {
         </ul>
       </nav>
       <div className="cart">
-        { carrito.length > 0 && <WidgetCart /> }
+        { (carrito != null || carrito.length > 0) && <WidgetCart /> }
       </div>
     </header>
   );

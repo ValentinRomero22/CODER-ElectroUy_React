@@ -31,18 +31,18 @@ export const CarritoProvider = ({ children }) =>{
     }, [carrito])
 
     const agregado = (producto) =>{
-        if(!carrito.some(p => p.id === producto.id))
-            return true
+        return (carrito.some(p => p.id === producto.id))
     }
 
     const agregarItem = (producto) =>{
-        if(agregado(producto)){
+        if(!agregado(producto)){
             setcarrito([...carrito, producto])  
         }
         else{
             const prod = carrito.find(p => p.id === producto.id)
             prod.cantidad += producto.cantidad
             setcarrito([...carrito])
+            return true
         }
     }
 
